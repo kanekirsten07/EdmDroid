@@ -68,15 +68,7 @@ public class MainActivity extends Activity implements SensorEventListener, OnCli
         float y = event.values[1];
         float z = event.values[2];
         
-        float deltaX = Math.abs(mLastX - x);
-        float deltaY = Math.abs(mLastY - y);
-        float deltaZ = Math.abs(mLastZ - z);
-        if (deltaX < NOISE) deltaX = (float)0.0;
-        if (deltaY < NOISE) deltaY = (float)0.0;
-        if (deltaZ < NOISE) deltaZ = (float)0.0;
-        mLastX = x;
-        mLastY = y;
-        mLastZ = z;
+        
         tvX.setText(Float.toString(x));
         tvY.setText(Float.toString(y));
         tvZ.setText(Float.toString(z));
@@ -112,8 +104,10 @@ public class MainActivity extends Activity implements SensorEventListener, OnCli
 		public void playMusic(float x, float y, float z)
 		{
 			
-	        
-			if(y < 8)
+	        if ( x > -1 && x < 1)
+	        {
+	        	// Right side up
+			if(y < 8 && z > 3)
 			{
 				
 		        if(!mp.isPlaying())
@@ -121,35 +115,56 @@ public class MainActivity extends Activity implements SensorEventListener, OnCli
 		           mp = MediaPlayer.create(this, R.raw.skrillex1);
 		           mp.start();
 		        }
-			}else if(y > 9)
+			}else if(y > 9 && z > 0 && z < 3)
 			{
 				if(!mp.isPlaying())
 		        {
 		           mp = MediaPlayer.create(this, R.raw.skrillex2);
 		           mp.start();
 		        }
-			}else if(y > 7 && y < 9)
+			}else if(y > 7 && y < 9 && z < 0)
 			{
 				if(!mp.isPlaying())
 		        {
 		           mp = MediaPlayer.create(this, R.raw.skrillex3);
 		           mp.start();
 		        }
-			}else if(x > 3)
-			{
-				if(!mp.isPlaying())
+			}
+	        }else if( x > 1)
+	        {
+	        	// Tilted Left
+	        	if(!mp.isPlaying())
 		        {
 		           mp = MediaPlayer.create(this, R.raw.knifeparty1);
 		           mp.start();
 		        }
-			}else if(x < -3)
-			{
-				if(!mp.isPlaying())
+	        	
+	        }else if( x < -1)
+	        {
+	        	// Tilted Right
+	        	if(z > 3)
+	        	{
+	        	if(!mp.isPlaying())
 		        {
-		           mp = MediaPlayer.create(this, R.raw.knifeparty2);
+		           mp = MediaPlayer.create(this, R.raw.knifeparty3);
 		           mp.start();
 		        }
-			}
+	        	}else if( z > 0 && z < 3)
+	        	{
+	        		if(!mp.isPlaying())
+			        {
+			           mp = MediaPlayer.create(this, R.raw.knifeparty2);
+			           mp.start();
+			        }
+	        	}else if( z < 0)
+	        	{
+	        		if(!mp.isPlaying())
+			        {
+			           mp = MediaPlayer.create(this, R.raw.knifeparty4);
+			           mp.start();
+			        }
+	        	}
+	        }
 				
 		}
 
