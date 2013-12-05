@@ -11,6 +11,32 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:paddingRight="30dp"
+        android:id="@+id/x_axis"
+        android:text="@string/x"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="30dp"
+        android:layout_toRightOf="@+id/x_axis"
+        android:id="@+id/y_axis"
+        android:text="@string/y"
+         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="30dp"
+        android:text="@string/z"
+        android:layout_toRightOf="@+id/y_axis"
+        android:id="@+id/z_axis"
+         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/y_axis"
+        android:text="@string/play"
+       android:id="@+id/play"
+       />
 
 </RelativeLayout>
