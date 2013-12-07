@@ -6,37 +6,52 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity" 
+    android:background="@drawable/background">
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:text="@string/play"
+        android:textColor="@color/White" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingRight="30dp"
         android:id="@+id/x_axis"
-        android:text="@string/x"
-        />
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="36dp"
         android:paddingRight="30dp"
-        android:layout_toRightOf="@+id/x_axis"
-        android:id="@+id/y_axis"
-        android:text="@string/y"
-         />
+        android:text="@string/x"
+        android:textColor="@color/White" />
+
     <TextView
+        android:id="@+id/y_axis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/x_axis"
+        android:layout_alignBottom="@+id/x_axis"
+        android:layout_centerHorizontal="true"
+        android:paddingRight="30dp"
+        android:text="@string/y"
+        android:textColor="@color/White" />
+
+    <TextView
+        android:id="@+id/z_axis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/y_axis"
+        android:layout_alignBottom="@+id/y_axis"
+        android:layout_marginLeft="28dp"
+        android:layout_toRightOf="@+id/play"
         android:paddingRight="30dp"
         android:text="@string/z"
-        android:layout_toRightOf="@+id/y_axis"
-        android:id="@+id/z_axis"
-         />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/y_axis"
-        android:text="@string/play"
-       android:id="@+id/play"
-       />
+        android:textColor="@color/White" />
 
 </RelativeLayout>

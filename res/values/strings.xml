@@ -8,5 +8,7 @@
     <string name="y">0</string>
     <string name="z">0</string>
     <string name="play">Play!</string>
+    <color name="Black">#000000</color>
+    <color name="White">#FFFFFF</color>
 
 </resources>
